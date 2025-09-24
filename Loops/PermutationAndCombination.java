@@ -2,21 +2,29 @@ package Loops;
 import java.util.*;
 public class PermutationAndCombination{
     public static void main(String[] args) {
-      Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the value of n");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the value of n : ");
         int n = sc.nextInt();
-        int fact = 1;
-        for(int i = 0; i<=n; i++){
-            fact = fact * i;
+        int nfact = 1;
+        for(int i=1; i<=n; i++){
+            nfact = nfact*i;
         }
-        System.out.println("The factorial of " + n + fact);
-        System.out.println("Enter the value of r");
+        System.out.println("The factorial of " + n + " is " + nfact);
+        System.out.println("Enter the value of r : ");
         int r = sc.nextInt();
-        for (int i = 0; i <= r; i++) {
-            fact = fact * i;
+        int rfact = 1;
+        for(int i=1; i<=r; i++){
+            rfact = rfact *i;
         }
-        System.out.println("The factorial of " + r + fact);
-        System.out.println("The combination is " + (n/(n*(n-r))));
-        System.out.println("The permutation is " + (n/(n-r)));
+        System.out.println("The factorial of " + r + " is " + rfact);
+        int nrfact = 1;
+        for(int i=1; i<=n-r; i++){
+            nrfact = nrfact*i;
+        }
+        System.out.println("The factorial of " + (n-r) + " is " + nrfact);
+        int nCr = (nfact/(rfact * nrfact));
+        System.out.println("The combination is : " + nCr);
+    int nPr = (nfact/nrfact);
+        System.out.println("The permutation is : " + nPr);
     }
 }
